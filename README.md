@@ -101,6 +101,12 @@ There is no bundler or build pipeline. The extension is plain JavaScript loaded 
 ```text
 .
 ├── background.js
+├── icons
+│   ├── icon16.png
+│   ├── icon32.png
+│   ├── icon48.png
+│   ├── icon128.png
+│   └── icon1024.png
 ├── manifest.json
 ├── match-monitor.js
 ├── music-controller.js
