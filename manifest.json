@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "NoAds Stream Switch (Dev)",
+  "version": "0.3.0",
+  "description": "Monitors a match stream tab, mutes it during ads, and fades in music.",
+  "permissions": ["activeTab", "storage", "tabs", "scripting"],
+  "optional_host_permissions": ["http://*/*", "https://*/*"],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "NoAds Stream Switch",
+    "default_popup": "popup.html"
+  }
+}

@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NoAds Test Match Stream</title>
+    <style>
+      :root {
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        color: #17202a;
+        background: #eef2f6;
+      }
+
+      body {
+        margin: 0;
+        display: grid;
+        min-height: 100vh;
+        place-items: center;
+      }
+
+      main {
+        width: min(920px, calc(100vw - 32px));
+        display: grid;
+        gap: 16px;
+      }
+
+      .screen {
+        aspect-ratio: 16 / 9;
+        display: grid;
+        place-items: center;
+        border-radius: 8px;
+        background: #12643d;
+        color: white;
+        box-shadow: 0 16px 40px rgba(23, 32, 42, 0.16);
+      }
+
+      .screen[data-mode="ad"] {
+        background: #252b33;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(28px, 5vw, 64px);
+        letter-spacing: 0;
+      }
+
+      .controls {
+        display: flex;
+        gap: 8px;
+      }
+
+      button {
+        min-height: 40px;
+        padding: 0 16px;
+        border: 1px solid #b7c0ca;
+        border-radius: 6px;
+        background: white;
+        font: inherit;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section id="screen" class="screen" data-mode="match">
+        <h1 id="headline">LIVE MATCH</h1>
+      </section>
+      <div class="controls">
+        <button id="match">Resume Match</button>
+        <button id="ad">Show Advertisement</button>
+        <button id="auto">Auto Toggle</button>
+      </div>
+    </main>
+
+    <script>
+      const screen = document.querySelector("#screen");
+      const headline = document.querySelector("#headline");
+      let autoTimer = null;
+
+      document.querySelector("#match").addEventListener("click", () => setAd(false));
+      document.querySelector("#ad").addEventListener("click", () => setAd(true));
+      document.querySelector("#auto").addEventListener("click", () => {
+        if (autoTimer) {
+          clearInterval(autoTimer);
+          autoTimer = null;
+          return;
+        }
+        autoTimer = setInterval(() => setAd(document.documentElement.dataset.noadsAd !== "true"), 7000);
+      });
+
+      function setAd(isAd) {
+        document.documentElement.dataset.noadsAd = isAd ? "true" : "false";
+        screen.dataset.mode = isAd ? "ad" : "match";
+        headline.textContent = isAd ? "ADVERTISEMENT" : "LIVE MATCH";
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NoAds Stream Switch</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main class="shell">
+      <header>
+        <h1>NoAds Stream Switch</h1>
+        <p id="statusText">Select a match tab and a music tab.</p>
+      </header>
+
+      <label class="field">
+        <span>Match stream</span>
+        <select id="matchTab"></select>
+      </label>
+
+      <label class="field">
+        <span>Music tab</span>
+        <select id="musicTab"></select>
+      </label>
+
+      <section class="settings" aria-label="Settings">
+        <label>
+          <span>Music volume</span>
+          <input id="musicVolume" type="range" min="5" max="100" value="75">
+        </label>
+        <label>
+          <span>Fade time</span>
+          <input id="fadeMs" type="range" min="250" max="8000" step="250" value="1800">
+        </label>
+        <label>
+          <span>Resume delay</span>
+          <input id="resumeMs" type="range" min="500" max="8000" step="250" value="2500">
+        </label>
+      </section>
+
+      <div class="actions">
+        <button id="refreshTabs" type="button">Refresh</button>
+        <button id="stop" type="button" class="secondary">Stop</button>
+        <button id="start" type="button" class="primary">Start</button>
+      </div>
+
+      <p id="message" class="message" role="status"></p>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>

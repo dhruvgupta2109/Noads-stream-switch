@@ -1,0 +1,9 @@
+{
+  "name": "noads-stream-switch",
+  "version": "0.3.0",
+  "private": true,
+  "description": "Chrome extension that mutes a match stream during ads and fades music in from another tab.",
+  "scripts": {
+    "check": "node --check background.js && node --check popup.js && node --check match-monitor.js && node --check music-controller.js"
+  }
+}
