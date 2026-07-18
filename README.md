@@ -4,17 +4,9 @@ NoAds Stream Switch is a Chrome Manifest V3 extension that switches audio betwee
 
 ## Screenshots
 
-### Basic UI
-
-<img src="./docs/screenshots/basic-ui.png" alt="NoAds Stream Switch basic interface" width="450">
-
-### Match detected — music at 0%
-
-<img src="./docs/screenshots/match-detected.png" alt="Match detected with music volume at zero percent" width="450">
-
-### Ad detected — match muted, music playing
-
-<img src="./docs/screenshots/ad-detected.png" alt="Ad detected with the match tab muted and music playing" width="450">
+| Basic UI | Match detected — music at 0% | Ad detected — match muted, music playing |
+| :---: | :---: | :---: |
+| <img src="./docs/screenshots/basic-ui.png" alt="NoAds Stream Switch basic interface" width="240"> | <img src="./docs/screenshots/match-detected.png" alt="Match detected with music volume at zero percent" width="240"> | <img src="./docs/screenshots/ad-detected.png" alt="Ad detected with the match tab muted and music playing" width="240"> |
 
 ## Features
 
